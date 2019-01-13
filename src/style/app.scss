@@ -1,0 +1,166 @@
+$color1: #ec9b40;
+html, body {
+    background-color: #171717;
+}
+
+body {
+    width: 100%;
+    min-width: 600px;
+    margin: 20px;
+    color: $color1;
+    font-family: 'Roboto', 'Courier New', Courier, monospace;
+}
+
+#app{
+    min-width: 960px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+#ranking
+{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#top {
+    position: relative;
+
+}
+
+#title {
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+#middle { 
+    display: flex;
+    flex-grow: 1;
+    justify-content: start;
+}
+
+#footer {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+table, th, td {
+    
+    text-align: center;
+  }
+
+  td {
+    border: 1px solid $color1;
+    border-top: none;
+    border-left: none;
+    line-height: 1.5em;
+  }
+
+th {
+    border: 1px solid $color1;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-top: none !important;
+    border-left: none;
+}
+
+.player-rank-table{
+    min-width: 920px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+.component-rank {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.th-orderable
+{
+    cursor: pointer;
+}
+
+.input-filter
+{
+    font-size: 1.5em;
+}
+
+.btn
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.rank-nav
+{
+    text-align: right;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.rank-view-select-box
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    box-sizing: border-box;
+
+}
+
+.rank-view-select
+{
+    color: $color1;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid $color1;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance:none;
+
+    font-size: 1.5em;
+    outline:none;
+}
+
+.rank-view-select option {
+    color: #000;
+    padding: 5px;
+}
+
+.rank-selected{
+    font-weight: bolder;
+    font-size: 1.5em;
+
+}
+
+.rank-selected-2 {
+    font-weight: normal;
+    font-size: 0.75em;
+}
+
+a, a:visited {
+    color: $color1;
+}
+
+a:hover {
+    font-weight: bold;
+}

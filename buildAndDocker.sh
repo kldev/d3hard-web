@@ -1,0 +1,1 @@
+yarn build && docker build -t d3web .

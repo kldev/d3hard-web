@@ -1,0 +1,29 @@
+FROM node:8.12.0 as build-deps
+
+ENV VUE_APP_BASE_URL=
+ENV VUE_APP_DEV_LOGIN=
+ENV VUE_APP_DEV_PASSWORD=
+ENV VUE_APP_DEBUG_MODE=
+# ENV NODE_ENV=production
+# WORKDIR /app
+COPY /public /public
+COPY /src /src
+COPY ./babel.config.js babel.config.js
+COPY ./package.json  package.json
+COPY ./yarn.lock yarn.lock
+COPY ./postcss.config.js postcss.config.js
+COPY ./tsconfig.json tsconfig.json
+COPY ./tslint.json tslint.json
+COPY ./vue.config.js vue.config.js
+COPY ./yarn.lock yarn.lock
+WORKDIR .
+RUN NODE_ENV=development yarn install
+RUN NODE_ENV=production yarn build
+
+FROM nginx:1.15.3-alpine
+COPY --from=build-deps /dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+
+# docker build . -t d3web -f ./Dockerfile.fullBuild
+# docker run -it -p 80:80 --add-host="d3env-d3hard:172.17.0.1" d3web 
